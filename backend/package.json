@@ -9,7 +9,8 @@
     "dev": "nodemon src/server.js",
     "test": "jest",
     "migrate": "knex migrate:latest",
-    "seed": "knex seed:run"
+    "seed": "knex seed:run",
+    "check-env": "node check-env.js"
   },
   "keywords": [
     "psychology",
