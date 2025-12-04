@@ -76,7 +76,7 @@ RATE_LIMIT_MAX_REQUESTS=1000
 1. **Certifique-se de que o PostgreSQL está conectado ao backend:**
    - Vá no serviço do backend
    - Variables > Add Reference > Selecione PostgreSQL
-   
+
 2. **Configure as variáveis obrigatórias:**
    - `NODE_ENV=production`
    - `PORT=5001`

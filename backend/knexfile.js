@@ -9,6 +9,21 @@ const getDbConfig = () => {
   const user = process.env.PGUSER || process.env.DB_USER;
   const password = process.env.PGPASSWORD || process.env.DB_PASSWORD;
   
+  // Log para debug (não mostrar senha completa)
+  console.log('🔍 Configuração do banco de dados:');
+  console.log(`   Host: ${host || 'NÃO DEFINIDO'}`);
+  console.log(`   Port: ${port}`);
+  console.log(`   Database: ${database || 'NÃO DEFINIDO'}`);
+  console.log(`   User: ${user || 'NÃO DEFINIDO'}`);
+  console.log(`   Password: ${password ? '***' : 'NÃO DEFINIDO'}`);
+  
+  // Validar se todas as variáveis necessárias estão presentes
+  if (!host || !database || !user || !password) {
+    console.error('❌ Variáveis de ambiente do banco de dados não configuradas corretamente!');
+    console.error('   Verifique se o PostgreSQL está conectado ao serviço no Railway.');
+    console.error('   Variáveis esperadas: PGHOST, PGDATABASE, PGUSER, PGPASSWORD (ou DB_HOST, DB_NAME, DB_USER, DB_PASSWORD)');
+  }
+  
   return {
     host,
     port: parseInt(port, 10),
