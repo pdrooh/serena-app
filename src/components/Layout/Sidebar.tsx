@@ -25,7 +25,7 @@ interface NavigationItem {
   superAdminOnly?: boolean;
 }
 
-interface NavSection {
+interface NavigationSection {
   section: string;
   items: NavigationItem[];
 }
@@ -117,7 +117,7 @@ const SectionTitle = styled.h3`
   margin-bottom: ${theme.spacing.md};
 `;
 
-const navigationItems: NavSection[] = [
+const navigationItems: NavigationSection[] = [
   {
     section: 'Principal',
     items: [

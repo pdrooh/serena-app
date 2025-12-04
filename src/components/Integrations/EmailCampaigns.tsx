@@ -324,21 +324,7 @@ const FormTextarea = styled.textarea`
   }
 `;
 
-const FormSelect = styled.select`
-  width: 100%;
-  padding: ${theme.spacing.sm};
-  border: 1px solid ${theme.colors.border};
-  border-radius: ${theme.borderRadius.md};
-  font-size: ${theme.typography.sizes.sm};
-  color: ${theme.colors.text.primary};
-  background: ${theme.colors.background};
-  transition: border-color 0.2s ease;
-
-  &:focus {
-    outline: none;
-    border-color: ${theme.colors.primary};
-  }
-`;
+// FormSelect não utilizado - removido
 
 const ModalActions = styled.div`
   display: flex;
