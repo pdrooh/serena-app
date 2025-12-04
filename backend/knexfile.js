@@ -1,15 +1,28 @@
 require('dotenv').config();
 
+// Suporte para variáveis do Railway (PGHOST, PGPORT, etc.) e variáveis customizadas (DB_HOST, etc.)
+const getDbConfig = () => {
+  // Railway usa PGHOST, PGPORT, etc. - priorizar essas variáveis
+  const host = process.env.PGHOST || process.env.DB_HOST;
+  const port = process.env.PGPORT || process.env.DB_PORT || 5432;
+  const database = process.env.PGDATABASE || process.env.DB_NAME;
+  const user = process.env.PGUSER || process.env.DB_USER;
+  const password = process.env.PGPASSWORD || process.env.DB_PASSWORD;
+  
+  return {
+    host,
+    port: parseInt(port, 10),
+    database,
+    user,
+    password,
+    ssl: process.env.DB_SSL === 'true' || process.env.PGSSLMODE === 'require' ? { rejectUnauthorized: false } : false
+  };
+};
+
 module.exports = {
   development: {
     client: process.env.DB_CLIENT || 'sqlite3',
-    connection: process.env.DB_CLIENT === 'postgresql' ? {
-      host: process.env.DB_HOST || 'localhost',
-      port: process.env.DB_PORT || 5432,
-      database: process.env.DB_NAME || 'serena_dev',
-      user: process.env.DB_USER || 'postgres',
-      password: process.env.DB_PASSWORD || 'password'
-    } : {
+    connection: process.env.DB_CLIENT === 'postgresql' ? getDbConfig() : {
       filename: process.env.DB_FILENAME || './database.sqlite'
     },
     migrations: {
@@ -27,14 +40,7 @@ module.exports = {
 
   production: {
     client: 'postgresql',
-    connection: {
-      host: process.env.DB_HOST,
-      port: process.env.DB_PORT || 5432,
-      database: process.env.DB_NAME,
-      user: process.env.DB_USER,
-      password: process.env.DB_PASSWORD,
-      ssl: process.env.DB_SSL === 'true' ? { rejectUnauthorized: false } : false
-    },
+    connection: getDbConfig(),
     migrations: {
       directory: './src/database/migrations'
     },
