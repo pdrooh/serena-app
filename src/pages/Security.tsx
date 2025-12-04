@@ -283,8 +283,7 @@ const Security: React.FC = () => {
   const [currentPassword, setCurrentPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [twoFactorEnabled, setTwoFactorEnabled] = useState(false);
-  const [backupEnabled] = useState(true);
+  // Variáveis não utilizadas removidas
   const [isLoading, setIsLoading] = useState(false);
 
   const handleChangePassword = async () => {

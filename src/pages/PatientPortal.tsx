@@ -13,7 +13,6 @@ import {
 } from 'lucide-react';
 import { theme } from '../styles/theme';
 import { useApp } from '../context/AppContext';
-import { useAuth } from '../context/AuthContext';
 
 const PatientPortalContainer = styled.div`
   display: flex;
