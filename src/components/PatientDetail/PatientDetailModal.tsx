@@ -13,7 +13,8 @@ import {
   Plus,
   Trash2,
   MapPin,
-  Heart
+  Heart,
+  Eye
 } from 'lucide-react';
 import { theme } from '../../styles/theme';
 import { Patient } from '../../types';

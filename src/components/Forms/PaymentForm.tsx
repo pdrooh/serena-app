@@ -210,18 +210,6 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
 }) => {
   const { register, handleSubmit, formState: { errors }, reset, watch } = useForm<PaymentFormData>();
   const [selectedPatient, setSelectedPatient] = useState<string>('');
-    // Remove todos os caracteres não numéricos
-    const numbers = value.replace(/\D/g, '');
-
-    // Aplica a máscara (11) 99999-9999
-    if (numbers.length <= 2) {
-      return numbers;
-    } else if (numbers.length <= 7) {
-      return `(${numbers.slice(0, 2)}) ${numbers.slice(2)}`;
-    } else {
-      return `(${numbers.slice(0, 2)}) ${numbers.slice(2, 7)}-${numbers.slice(7, 11)}`;
-    }
-  };
 
   useEffect(() => {
     if (payment) {
