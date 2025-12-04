@@ -1,0 +1,45 @@
+{
+  "short_name": "Serena",
+  "name": "Serena - Gestão de Consultório Psicológico",
+  "description": "Seu espaço seguro para acompanhar sua evolução psicológica",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "favicon.ico",
+      "type": "image/x-icon",
+      "sizes": "192x192"
+    },
+    {
+      "src": "favicon.ico",
+      "type": "image/x-icon",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#4A90E2",
+  "background_color": "#F8F9FA",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "pt-BR",
+  "categories": [
+    "health",
+    "medical",
+    "productivity"
+  ],
+  "screenshots": [
+    {
+      "src": "favicon.ico",
+      "sizes": "1280x720",
+      "type": "image/x-icon",
+      "form_factor": "wide"
+    }
+  ]
+}
+
+
+

@@ -1,0 +1,33 @@
+services:
+  - type: web
+    name: serena-backend
+    env: node
+    buildCommand: cd backend && npm install && npm run migrate
+    startCommand: cd backend && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5001
+      - key: DB_CLIENT
+        value: postgresql
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CORS_ORIGIN
+        sync: false
+
+  - type: web
+    name: serena-frontend
+    env: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: build
+    envVars:
+      - key: REACT_APP_API_URL
+        sync: false
+
+databases:
+  - name: serena-db
+    plan: free
+    databaseName: serena_prod
+    user: serena_user
+
