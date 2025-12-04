@@ -9,13 +9,11 @@ import {
   ExternalLink,
   Copy,
   Check,
-  Settings,
   X
 } from 'lucide-react';
 import { theme } from '../../styles/theme';
 import { externalIntegrationsService, TeleconsultaMeeting } from '../../services/externalIntegrations';
 import { useApp } from '../../context/AppContext';
-import { Appointment } from '../../types';
 import { toast } from 'react-toastify';
 
 const TeleconsultaContainer = styled.div`

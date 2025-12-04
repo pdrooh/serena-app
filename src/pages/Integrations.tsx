@@ -6,8 +6,6 @@ import {
   MessageSquare,
   Mail,
   Video,
-  Bell,
-  Smartphone
 } from 'lucide-react';
 import { theme } from '../styles/theme';
 import IntegrationsSettings from '../components/Integrations/IntegrationsSettings';

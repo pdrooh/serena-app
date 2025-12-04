@@ -297,7 +297,7 @@ const SessionForm: React.FC<SessionFormProps> = ({
   onCancel,
   isLoading = false
 }) => {
-  const { register, handleSubmit, formState: { errors }, reset, setValue, watch } = useForm<SessionFormData>();
+  const { register, handleSubmit, formState: { errors }, reset, watch } = useForm<SessionFormData>();
   const [objectives, setObjectives] = useState<string[]>([]);
   const [techniques, setTechniques] = useState<string[]>([]);
   const [objectiveInput, setObjectiveInput] = useState('');

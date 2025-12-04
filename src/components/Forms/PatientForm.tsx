@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { useForm } from 'react-hook-form';
 import { Patient } from '../../types';
@@ -167,7 +167,7 @@ const PatientForm: React.FC<PatientFormProps> = ({
   onCancel,
   isLoading = false
 }) => {
-  const { register, handleSubmit, formState: { errors }, reset, setValue, watch } = useForm<PatientFormData>();
+  const { register, handleSubmit, formState: { errors }, reset, setValue } = useForm<PatientFormData>();
 
   // Função para formatar telefone automaticamente
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {

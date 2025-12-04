@@ -10,9 +10,6 @@ import {
   Eye,
   Plus,
   Settings,
-  Search,
-  CheckCircle,
-  Clock
 } from 'lucide-react';
 import { theme } from '../styles/theme';
 import { useApp } from '../context/AppContext';
@@ -229,40 +226,7 @@ const UpcomingAppointments = styled.div`
 `;
 
 
-const MaterialsList = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${theme.spacing.md};
-`;
-
-const MaterialItem = styled.div`
-  background: ${theme.colors.background};
-  border-radius: ${theme.borderRadius.md};
-  padding: ${theme.spacing.md};
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-const MaterialInfo = styled.div`
-  flex: 1;
-`;
-
-const MaterialName = styled.div`
-  font-weight: ${theme.typography.weights.medium};
-  color: ${theme.colors.text.primary};
-  margin-bottom: ${theme.spacing.xs};
-`;
-
-const MaterialDate = styled.div`
-  color: ${theme.colors.text.secondary};
-  font-size: ${theme.typography.sizes.sm};
-`;
-
-const MaterialActions = styled.div`
-  display: flex;
-  gap: ${theme.spacing.sm};
-`;
+// Componentes não utilizados removidos
 
 const ActionButton = styled.button<{ variant?: 'primary' | 'secondary' }>`
   width: 100%;
@@ -296,44 +260,7 @@ const ActionButton = styled.button<{ variant?: 'primary' | 'secondary' }>`
   `}
 `;
 
-const TasksList = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${theme.spacing.md};
-`;
-
-const TaskItem = styled.div`
-  background: ${theme.colors.background};
-  border-radius: ${theme.borderRadius.md};
-  padding: ${theme.spacing.md};
-  display: flex;
-  align-items: center;
-  gap: ${theme.spacing.md};
-`;
-
-const TaskCheckbox = styled.input`
-  width: 20px;
-  height: 20px;
-  border-radius: ${theme.borderRadius.sm};
-  border: 2px solid ${theme.colors.border};
-  cursor: pointer;
-`;
-
-const TaskText = styled.div`
-  flex: 1;
-  color: ${theme.colors.text.primary};
-`;
-
-const TaskDueDate = styled.div`
-  color: ${theme.colors.text.secondary};
-  font-size: ${theme.typography.sizes.sm};
-`;
-
-const EmptyState = styled.div`
-  text-align: center;
-  padding: ${theme.spacing.xl};
-  color: ${theme.colors.text.secondary};
-`;
+// Componentes não utilizados removidos
 
 // Modal de Detalhes do Paciente
 const PatientDetailsModal = styled.div`
@@ -866,7 +793,7 @@ const StatLabel = styled.div`
 
 const PatientPortal: React.FC = () => {
   const { state } = useApp();
-  const { state: authState } = useAuth();
+  // authState não utilizado - removido
   const [selectedPatient, setSelectedPatient] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [showPatientDetails, setShowPatientDetails] = useState(false);

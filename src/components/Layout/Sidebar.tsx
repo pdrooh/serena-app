@@ -17,7 +17,7 @@ import { theme } from '../../styles/theme';
 import { useAuth } from '../../context/AuthContext';
 import { LucideIcon } from 'lucide-react';
 
-interface NavItem {
+interface NavigationItem {
   path: string;
   icon: LucideIcon;
   label: string;
@@ -27,7 +27,7 @@ interface NavItem {
 
 interface NavSection {
   section: string;
-  items: NavItem[];
+  items: NavigationItem[];
 }
 
 const SidebarContainer = styled.aside<{ isOpen?: boolean }>`
@@ -181,7 +181,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
         <Navigation>
           {navigationItems.map((section, sectionIndex) => {
             // Filtrar itens que são apenas para super admin
-            const filteredItems: NavItem[] = section.items.filter((item: NavItem) => {
+            const filteredItems: NavigationItem[] = section.items.filter((item: NavigationItem) => {
               if (item.superAdminOnly) {
                 return isSuperAdmin();
               }

@@ -189,7 +189,6 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({
   isLoading = false
 }) => {
   const { register, handleSubmit, formState: { errors }, reset, watch } = useForm<AppointmentFormData>();
-  const [selectedDate, setSelectedDate] = useState('');
 
   useEffect(() => {
     if (appointment) {
@@ -206,7 +205,6 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({
         status: appointment.status,
         notes: appointment.notes || '',
       });
-      setSelectedDate(dateString);
     } else {
       const today = new Date();
       const todayString = today.toISOString().split('T')[0];
@@ -216,14 +214,11 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({
         duration: 50,
         type: 'presencial',
       });
-      setSelectedDate(todayString);
     }
   }, [appointment, reset]);
 
-  const watchedDate = watch('date');
-  useEffect(() => {
-    setSelectedDate(watchedDate);
-  }, [watchedDate]);
+  // Watch date for future use if needed
+  watch('date');
 
   const handleFormSubmit = (data: AppointmentFormData) => {
     // Combinar data e hora

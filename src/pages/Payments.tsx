@@ -12,7 +12,6 @@ import {
   Clock,
   XCircle,
   Download,
-  Eye,
   Edit,
   Trash2
 } from 'lucide-react';
@@ -379,7 +378,7 @@ const Payments: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingPayment, setEditingPayment] = useState<Payment | undefined>();
   const [isLoading, setIsLoading] = useState(false);
-  const [showPaymentMenu, setShowPaymentMenu] = useState<string | null>(null);
+  const [, setShowPaymentMenu] = useState<string | null>(null);
 
   const filteredPayments = state.payments.filter(payment => {
     const patient = getPatientById(payment.patientId);

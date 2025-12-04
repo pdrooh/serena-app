@@ -5,7 +5,6 @@ import {
   Plus,
   Calendar,
   Clock,
-  User,
   Video,
   MapPin,
   CheckCircle,
@@ -324,7 +323,7 @@ const Appointments: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingAppointment, setEditingAppointment] = useState<Appointment | undefined>();
   const [isLoading, setIsLoading] = useState(false);
-  const [showAppointmentMenu, setShowAppointmentMenu] = useState<string | null>(null);
+  const [, setShowAppointmentMenu] = useState<string | null>(null);
 
   const handleOpenModal = (appointment?: Appointment) => {
     setEditingAppointment(appointment);

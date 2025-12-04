@@ -11,7 +11,6 @@ import {
   Mic,
   Paperclip,
   Edit,
-  Eye,
   Trash2
 } from 'lucide-react';
 import { theme } from '../styles/theme';

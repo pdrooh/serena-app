@@ -1,17 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { toast } from 'react-toastify';
 import {
-  BarChart3,
   TrendingUp,
   Users,
   Calendar,
   DollarSign,
   Download,
   Filter,
-  Eye,
-  FileText,
-  PieChart
+  Eye
 } from 'lucide-react';
 import { theme } from '../styles/theme';
 import { useApp } from '../context/AppContext';

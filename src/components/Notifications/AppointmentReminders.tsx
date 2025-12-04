@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { toast } from 'react-toastify';
 import {
@@ -366,18 +366,6 @@ const AppointmentReminders: React.FC = () => {
     toast.success('Consulta marcada como realizada!');
   };
 
-  const getReminderType = (appointment: Appointment) => {
-    const appointmentTime = new Date(appointment.date);
-    const today = new Date();
-
-    if (appointmentTime.toDateString() === today.toDateString()) {
-      return 'today';
-    } else if (appointmentTime < now) {
-      return 'overdue';
-    } else {
-      return 'upcoming';
-    }
-  };
 
   const getTimeUntilAppointment = (appointment: Appointment) => {
     const appointmentTime = new Date(appointment.date);

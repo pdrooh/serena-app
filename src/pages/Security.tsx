@@ -13,7 +13,6 @@ import {
   Upload,
   Settings,
   UserCheck,
-  Save
 } from 'lucide-react';
 import { theme } from '../styles/theme';
 import { useAuth } from '../context/AuthContext';
@@ -276,7 +275,7 @@ const QRCode = styled.div`
 `;
 
 const Security: React.FC = () => {
-  const { state: authState, changePassword, updateUser } = useAuth();
+  const { state: authState, changePassword } = useAuth();
   const { state } = useApp();
   const [showCurrentPassword, setShowCurrentPassword] = useState(false);
   const [showNewPassword, setShowNewPassword] = useState(false);
@@ -285,7 +284,7 @@ const Security: React.FC = () => {
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [twoFactorEnabled, setTwoFactorEnabled] = useState(false);
-  const [backupEnabled, setBackupEnabled] = useState(true);
+  const [backupEnabled] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
 
   const handleChangePassword = async () => {
@@ -310,11 +309,7 @@ const Security: React.FC = () => {
     }
   };
 
-  const handleToggleTwoFactor = async () => {
-    // Simular toggle de 2FA
-    setTwoFactorEnabled(!twoFactorEnabled);
-    toast.success(`Autenticação de dois fatores ${!twoFactorEnabled ? 'ativada' : 'desativada'}`);
-  };
+  // handleToggleTwoFactor não utilizado - removido
 
   const handleBackupData = () => {
     const userId = authState.user?.id;

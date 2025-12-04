@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { toast } from 'react-toastify';
 import {
   Plus,
-  Search,
   Edit,
   Trash2,
   Eye,
@@ -14,11 +13,7 @@ import {
   Calendar,
   X,
   Save,
-  Users,
-  TrendingUp,
-  DollarSign,
-  FileText,
-  Clock
+  Users
 } from 'lucide-react';
 import { theme } from '../styles/theme';
 import { User } from '../types';

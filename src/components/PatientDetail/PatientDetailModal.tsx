@@ -11,19 +11,12 @@ import {
   Download,
   Upload,
   Plus,
-  Edit,
   Trash2,
-  Eye,
-  Phone,
-  Mail,
   MapPin,
-  Clock,
-  Heart,
-  AlertTriangle,
-  CheckCircle
+  Heart
 } from 'lucide-react';
 import { theme } from '../../styles/theme';
-import { Patient, Session, Appointment, Payment } from '../../types';
+import { Patient } from '../../types';
 import { useApp } from '../../context/AppContext';
 
 const ModalOverlay = styled.div`
@@ -413,7 +406,7 @@ const PatientDetailModal: React.FC<PatientDetailModalProps> = ({
   if (!isOpen || !patient) return null;
 
   const patientSessions = state.sessions?.filter(session => session.patientId === patient.id) || [];
-  const patientAppointments = state.appointments?.filter(appointment => appointment.patientId === patient.id) || [];
+  // patientAppointments não utilizado - removido
   const patientPayments = state.payments?.filter(payment => payment.patientId === patient.id) || [];
 
   const handleAddComment = async (e: React.FormEvent) => {

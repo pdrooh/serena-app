@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { Bell, User, Settings, LogOut, Menu, X } from 'lucide-react';
+import { Settings, LogOut, Menu, X } from 'lucide-react';
 import { theme } from '../../styles/theme';
 import { useAuth } from '../../context/AuthContext';
 import NotificationCenter from '../Notifications/NotificationCenter';

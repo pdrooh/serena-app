@@ -53,14 +53,14 @@ Ou faça push manualmente pelo GitHub Desktop ou interface web do GitHub.
    - No serviço do backend, vá em **"Variables"** (aba)
    - Clique em **"+ New Variable"**
    - Adicione uma por uma:
-   
+
    ```
    NODE_ENV = production
    PORT = 5001
    DB_CLIENT = postgresql
    JWT_SECRET = (clique em "Generate" para gerar automaticamente)
    ```
-   
+
    **⚠️ IMPORTANTE:** Ainda não adicione `CORS_ORIGIN` - vamos fazer isso depois que tiver a URL do frontend.
 
 ---
@@ -82,13 +82,13 @@ Ou faça push manualmente pelo GitHub Desktop ou interface web do GitHub.
      - `PGDATABASE`
      - `PGUSER`
      - `PGPASSWORD`
-   
+
 3. **Adicionar essas variáveis no Backend:**
    - Volte para o serviço do **backend**
    - Vá em **"Variables"**
    - Clique em **"+ New Variable"**
    - Adicione cada uma (copie os valores do banco):
-   
+
    ```
    DB_HOST = (valor de PGHOST)
    DB_PORT = (valor de PGPORT)

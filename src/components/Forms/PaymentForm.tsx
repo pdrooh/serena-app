@@ -208,11 +208,8 @@ const PaymentForm: React.FC<PaymentFormProps> = ({
   onCancel,
   isLoading = false
 }) => {
-  const { register, handleSubmit, formState: { errors }, reset, watch, setValue } = useForm<PaymentFormData>();
+  const { register, handleSubmit, formState: { errors }, reset, watch } = useForm<PaymentFormData>();
   const [selectedPatient, setSelectedPatient] = useState<string>('');
-
-  // Função para formatar telefone automaticamente
-  const formatPhone = (value: string) => {
     // Remove todos os caracteres não numéricos
     const numbers = value.replace(/\D/g, '');
 

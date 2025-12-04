@@ -7,11 +7,9 @@ import {
   Settings,
   Trash2,
   Check,
-  Clock,
   Calendar,
   CreditCard,
   Gift,
-  AlertTriangle,
   Info,
   X
 } from 'lucide-react';
